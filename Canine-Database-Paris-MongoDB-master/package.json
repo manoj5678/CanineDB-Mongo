@@ -1,0 +1,24 @@
+{
+  "name": "dogs-mongo-app-final",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krishnatejakancherla"
+  },
+  "keywords": [
+    "manoj"
+  ],
+  "author": "Manoj Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mongoose": "^5.8.1"
+  }
+}

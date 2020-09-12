@@ -1,0 +1,95 @@
+<!--
+ * @author ${Manoj Reddy}
+ *
+ -->
+<style>
+.section {
+    font-family: sans-serif;
+}
+
+table,
+.toolbar {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid black;
+
+    padding: 5px 0;
+}
+
+table th {
+    background: #ddd;
+}
+
+.toolbar {
+    text-align: right;
+    padding: 8px 0;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.toolbar a {
+    text-decoration: none;
+    padding: 8px;
+    background: #171746d1;
+    color: #ffffffd9;
+    border: 0;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 6px 26px -5px rgba(173, 173, 173, 1);
+    -moz-box-shadow: 0px 6px 26px -5px rgba(173, 173, 173, 1);
+    box-shadow: 0px 6px 26px -5px rgba(173, 173, 173, 1);
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: :10px;
+
+
+}
+
+tr a {
+    font-size: 16px;
+    color: #171746d1;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+</style>
+<div class="section">
+    <h2 align="center"> Dog data</h2>
+    <div class="toolbar">
+        <a href="/dog"> Create New</a>
+
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Dog Name</th>
+                <th>Dog Breed</th>
+                <th>Dog Height</th>
+                <th>Dog Weight</th>
+                <th>Dog Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr align="center">
+                <td>{{this.dogName}}</td>
+                <td>{{this.dogBreed}}</td>
+                <td>{{this.dogHeight}}</td>
+                <td>{{this.dogWeight}}</td>
+                <td>{{this.dogAge}}</td>
+                <td>
+                    <a href="/dog/{{this._id}}"> Edit </a>
+                    <a href="/dog/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"> Delete </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

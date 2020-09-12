@@ -1,0 +1,89 @@
+<!-- Obtaining value from the Dog controller -->
+<!--
+ * @author ${Manoj Reddy}
+ *
+ -->
+<style>
+    h2{
+    text-align: center;
+}
+div{
+    font-family: sans-serif;
+}
+form{
+    background: #ddd;
+    padding: 20px;
+    margin: 0 auto;
+    width:30%;
+    border-radius: 5px;
+    text-align: center;
+}
+.form-group{
+    width:80%;
+    margin: 15px auto;
+    font-size: 14px;
+   }
+.form-group label{
+    display: inline-block;
+    width:150px;
+    text-align: left;
+}
+.form-group input{
+    display: inline-block;
+    width:200px;
+    padding: 5px;
+    border:0;
+    border-radius: 2px; 
+}
+button{
+    width:100%;
+    padding: 8px;
+    background: #171746d1;
+    color:#ffffffd9;
+    border:0;
+    border-radius: 2px;
+    display: block;
+    -webkit-box-shadow: 0px 6px 26px -5px rgba(10,10,10,1);
+    -moz-box-shadow: 0px 6px 26px -5px rgba(10,10,10,1);
+    box-shadow: 0px 6px 26px -5px rgba(10,10,10,1);
+    margin: 20px 0;
+    font-size: 16px
+}
+a{
+    font-size: 16px;
+    color:#171746d1;
+}
+
+</style>
+<div>
+    <h2>{{viewTitle}}</h2>
+
+
+    <form action="/dog" method="POST">
+        <input type="hidden" name="_id" value="{{dog._id}}">
+        <div class="form-group">
+            <label>Dog Name</label>
+            <input type="text" maxlength="100" class="form-control" name="dogName" placeholder="Dog Name" value="{{dog.dogName}}">
+            <div class="text-danger">
+                {{dog.dogNameError}}</div>
+        </div>
+        <div class="form-group">
+            <label>Dog Height</label>
+            <input type="number" min='1' max='100' class="form-control" name="dogHeight" placeholder="Dog Height" value="{{dog.dogHeight}} " required>
+        </div>
+        <div class="form-group">
+            <label>Dog Weight</label>
+            <input type="number" min='1' max='100' class="form-control" name="dogWeight" placeholder="Dog Weight" value="{{dog.dogWeight}} " required>
+        </div>
+        <div class="form-group">
+            <label>Dog Breed</label>
+            <input type="text" maxlength="100" class="form-control" name="dogBreed" placeholder="Dog Breed" value="{{dog.dogBreed}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Dog Age</label>
+            <input type="number" min='1' max="100" class="form-control" name="dogAge" placeholder="Dog Age " "{{dog.dogAge}} " required>
+        </div>
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/dog/list"><i class="fa fa-list-alt"></i> View All Dogs</a>
+    </form>
+</div>
